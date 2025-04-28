@@ -25,6 +25,7 @@
 }
 
 body {
+  background-color: var(--purple-50);
   font-family: var(--font-family-body);
   font-size: var(--font-size-body);
   min-height: 100vh;
