@@ -1,0 +1,160 @@
+:root {
+  /* Primary */
+  --purple-50: hsl(260, 100%, 95%);
+  --purple-300: hsl(264, 82%, 80%);
+  --purple-500: hsl(263, 55%, 52%);
+
+  /* Neutral */
+  --white: hsl(0, 0%, 100%);
+  --grey-100: hsl(214, 17%, 92%);
+  --grey-200: hsl(0, 0%, 81%);
+  --grey-400: hsl(224, 10%, 45%);
+  --grey-500: hsl(217, 19%, 35%);
+  --dark-blue: hsl(219, 29%, 14%);
+  --black: hsl(0, 0%, 7%);
+
+  /* Typography */
+  --font-size-body: 13px;
+  --font-family-body: "Barlow Semi Condensed", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-body);
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main {
+  padding: 5rem 1.5rem;
+}
+
+.grid-section {
+  width: 100%;
+  max-width: 1300px;
+  display: grid;
+  grid-template-columns: 1fr; /* one column */
+  grid-template-areas:
+    "Daniel"
+    "Jonathan"
+    "Jeanette"
+    "Patrick"
+    "Kira";
+  gap: 30px;
+}
+
+/* For large screens (Desktop layout) */
+@media (width >= 1024px) {
+  .grid-section {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "Daniel Daniel Jonathan Kira"
+      "Jeanette Patrick Patrick Kira";
+  }
+}
+
+.article-general-styling {
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 33px 20px 27px 4px rgba(0, 0, 0, 0.11);
+  line-height: 1.5;
+
+  .name-title-container {
+    display: flex;
+    align-items: start;
+    margin-bottom: 20px;
+
+    img {
+      border-radius: 50%;
+      width: 2.1rem;
+      align-self: center;
+    }
+
+    .name-wrapper {
+      height: 100%;
+      margin-left: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-items: start;
+      line-height: 1.5;
+    }
+
+    span:first-of-type {
+      font-size: 0.9rem;
+    }
+    span:nth-of-type(2) {
+      font-size: 0.7rem;
+    }
+  }
+
+  p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+
+  blockquote {
+    line-height: 1.5;
+  }
+}
+
+.article-1 {
+  background-color: var(--purple-500);
+  color: var(--purple-50);
+  span:nth-of-type(2) {
+    font-size: 0.8rem;
+    letter-spacing: 0.3px;
+  }
+  img {
+    border: 3px solid var(--purple-300);
+  }
+
+  p {
+    color: var(--white);
+    width: 90%;
+    line-height: 1.3;
+  }
+  grid-area: Daniel;
+}
+.article-2 {
+  background-color: var(--grey-500);
+  color: var(--grey-100);
+  p {
+    color: var(--white);
+  }
+
+  span:nth-of-type(2) {
+    color: var(--grey-200);
+  }
+  grid-area: Jonathan;
+}
+.article-3 {
+  background-color: var(--white);
+  color: var(--dark-blue);
+  grid-area: Jeanette;
+}
+.article-4 {
+  background-color: var(--dark-blue);
+  color: var(--grey-100);
+  img {
+    border: 3px solid var(--purple-300);
+  }
+  grid-area: Patrick;
+}
+.article-5 {
+  background-color: var(--white);
+  color: var(--dark-blue);
+  span:nth-of-type(2) {
+    color: var(--grey-200);
+  }
+  grid-area: Kira;
+}
